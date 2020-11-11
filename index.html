@@ -14,8 +14,8 @@
             <h4 class="title"> Lista della spesa</h4>
 
             <!-- creo un input e su "new-item" dentro v-model salvo il dato inserito dall'utente -->
-            <input type="text" v-model="item" placeholder="Inserisci cosa comprare" value="">
-            <button @click="add_new_item(item)" type="button" name="button">Aggiungi</button>
+            <input type="text" v-model="item" placeholder="Inserisci cosa comprare" v-on:keyup.13="add_new_item(item)" value="">
+            <button @click="add_new_item(item)"  type="button" name="button">Aggiungi</button>
 
             <ul class="list-box">
             <!-- stampa di list -->
