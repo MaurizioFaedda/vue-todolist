@@ -7,7 +7,9 @@ var app = new Vue ({
             "uova", "latte", "birra"
         ],
 
-        item: ""
+        item: "",
+
+        checkedItem: []
     },
     methods: {
 
@@ -21,11 +23,11 @@ var app = new Vue ({
 
         remove_item(index) {
             this.list.splice(index, 1);
-        }
+        },
 
-        // deleteItem: function(item) {
-        //     this.list.splice(this.list.indexOf(this.item));
-        // }
+        del(text) {
+            return `<del> ${text} </del>`
+        }
 
     }
 })

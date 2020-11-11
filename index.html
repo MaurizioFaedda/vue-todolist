@@ -11,16 +11,31 @@
 </head>
     <body>
         <div class="container" id="root">
-            <h4 class="title"> Lista della spesa</h4>
+            <div id="todo-box">
+                <h4 class="title"> Cosa vuoi comprare</h4>
 
-            <!-- creo un input e su "new-item" dentro v-model salvo il dato inserito dall'utente -->
-            <input type="text" v-model="item" placeholder="Inserisci cosa comprare" v-on:keyup.13="add_new_item(item)" value="">
-            <button @click="add_new_item(item)"  type="button" name="button">Aggiungi</button>
+                <!-- creo un input e su "new-item" dentro v-model salvo il dato inserito dall'utente -->
+                <input type="text" v-model="item" placeholder="Inserisci cosa comprare" v-on:keyup.13="add_new_item(item)" value="">
+                <button @click="add_new_item(item)"  type="button" name="button">Aggiungi</button>
 
-            <ul class="list-box">
-            <!-- stampa di list -->
-                <li @click= "remove_item(index)" v-for="(item, index) in list" >{{item}}</li>
-            </ul>
+                <ul class="list-box">
+                <!-- stampa di list -->
+                    <li @click= "remove_item(index)" v-for="(item, index) in list" >{{item}}</li>
+                </ul>
+            </div>
+            <!-- voglio creare una lista dove l'utente spunta sui prodotti che ha acquistato -->
+            <div id="todo-checkbox">
+                <h4>Spunta i prodotti che hai comprato</h4>
+                <ul class="list-checkbox">
+                    <li id="check-list" v-for="(item, index) in list">
+                        <input type="checkbox" v-model="checkedItem">
+                        <label  v-html="del(item)"></label><br>
+                    </li>
+                </ul>
+
+
+            </div>
+
 
         </div>
 
