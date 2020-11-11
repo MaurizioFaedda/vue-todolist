@@ -19,7 +19,7 @@
 
             <ul class="list-box">
             <!-- stampa di list -->
-                <li v-for="item in list" >{{item}}</li>
+                <li @click= "remove_item(index)" v-for="(item, index) in list" >{{item}}</li>
             </ul>
 
         </div>
