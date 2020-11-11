@@ -13,6 +13,7 @@ var app = new Vue ({
 
         add_new_item(item) {
             this.list.push(this.item);
+            this.item = ""
         }
     }
 })
