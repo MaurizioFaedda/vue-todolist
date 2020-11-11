@@ -28,7 +28,7 @@
                 <h4>Spunta i prodotti che hai comprato</h4>
                 <ul class="list-checkbox">
                     <li id="check-list" v-for="(item, index) in list">
-                        <input type="checkbox" v-id="item" v-model="checkedItem">
+                        <input type="checkbox" v-id="item" v-value="item" v-model="checkedItem">
                         <label v-for="item" v-html="del(item)"></label><br>
                     </li>
                 </ul>
