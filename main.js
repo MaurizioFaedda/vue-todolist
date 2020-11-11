@@ -30,7 +30,7 @@ var app = new Vue ({
             // aggiungo l'item in list e di coseguenza viene stampata grazie al v-for nell'html
             this.list.push({
                 prodotto: element,
-                classe: "del"
+                classe: false
             }
         );
 
