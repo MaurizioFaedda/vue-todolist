@@ -20,7 +20,7 @@ var app = new Vue ({
         },
 
         remove_item(index) {
-            this.list.splice(this.index);
+            this.list.splice(this.index, 1);
         }
 
         // deleteItem: function(item) {
