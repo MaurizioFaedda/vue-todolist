@@ -12,6 +12,7 @@
     <body>
         <div class="container" id="root">
             <div id="todo-box">
+
                 <h4 class="title"> Cosa vuoi comprare</h4>
 
                 <!-- creo un input e su "new-item" dentro v-model salvo il dato inserito dall'utente -->
@@ -20,8 +21,17 @@
 
                 <ul class="list-box">
                 <!-- stampa di list -->
-                    <li :class="" @click= "remove_item(index)" v-for="(item, index) in list" >{{item.prodotto}} </li>
+                    <li :class="{del: item.classe}"  v-for="(item, index) in list" >
+                        <i @click="transform(item)" class="fas fa-times"></i>
+                        <i @click= "remove_item(index)" class="fas fa-trash-alt"></i>
+                        <span >{{item.prodotto}}</span>
+                         </li>
                 </ul>
+                <div class="info">
+                    <span><i class="fas fa-times"> per sbarrare il prodotto </i>
+                        <i class="fas fa-trash-alt"> per eliminare il prodotto</i></span>
+
+                </div>
             </div>
             <!-- voglio creare una lista dove l'utente spunta sui prodotti che ha acquistato -->
             <!-- <div id="todo-checkbox">

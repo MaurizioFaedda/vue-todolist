@@ -6,19 +6,21 @@ var app = new Vue ({
         list: [
             {
                 prodotto: "uova",
-                classe: "del",
+                classe: false,
             },
             {
                 prodotto: "pane",
-                classe: "del",
+                classe: false,
             },
             {
                 prodotto: "sale",
-                classe: "del",
+                classe: false
             }
         ],
 
         new_prodotto: "",
+
+        isActive: false
 
         // checkedItem: []
     },
@@ -41,6 +43,10 @@ var app = new Vue ({
             this.list.splice(index, 1);
         },
 
+        transform(item) {
+            item.classe = true
+
+        }
         // del(text) {
         //     return `<del> ${text} </del>`
         // }
