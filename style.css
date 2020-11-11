@@ -25,6 +25,9 @@
 .list-box li span {
     font-size: 30px;
 }
+.list-box li i, button {
+    cursor: pointer;
+}
 
 .info span{
     font-size: 11px;
