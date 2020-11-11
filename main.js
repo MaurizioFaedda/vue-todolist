@@ -44,7 +44,10 @@ var app = new Vue ({
         },
 
         transform(item) {
-            item.classe = true
+
+            if (item.classe == false) {
+                item.classe = true
+            } else item.classe = false
 
         }
         // del(text) {
