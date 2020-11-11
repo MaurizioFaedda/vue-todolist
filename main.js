@@ -4,30 +4,46 @@ var app = new Vue ({
     data: {
         // definire una lista di todo
         list: [
-            "uova", "latte", "birra"
+            {
+                prodotto: "uova",
+                classe: "del",
+            },
+            {
+                prodotto: "pane",
+                classe: "del",
+            },
+            {
+                prodotto: "sale",
+                classe: "del",
+            }
         ],
 
-        item: "",
+        new_prodotto: "",
 
-        checkedItem: []
+        // checkedItem: []
     },
     methods: {
 
-        add_new_item(item) {
+        add_new_item(element) {
             // aggiungo l'item in list e di coseguenza viene stampata grazie al v-for nell'html
-            this.list.push(this.item);
+            this.list.push({
+                prodotto: element,
+                classe: "del"
+            }
+        );
+
 
             // dopo che l'item viene aggiunto assegno a item un valore vuoto in modo da pulire l'input
-            this.item = ""
+            this.new_prodotto = ""
         },
 
         remove_item(index) {
             this.list.splice(index, 1);
         },
 
-        del(text) {
-            return `<del> ${text} </del>`
-        }
+        // del(text) {
+        //     return `<del> ${text} </del>`
+        // }
 
     }
 })
